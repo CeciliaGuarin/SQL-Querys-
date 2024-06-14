@@ -1,0 +1,11 @@
+DECLARE @COD INT
+
+SET @COD = 100
+
+WHILE @COD < 104
+BEGIN
+	SELECT ID_Livro ,Titulo_Livro, Preco_Livro
+	FROM PDI..TBL_LIVROS
+	WHERE ID_Livro = @COD
+	SET @COD = @COD + 1
+END

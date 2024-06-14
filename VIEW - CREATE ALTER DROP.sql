@@ -1,0 +1,27 @@
+--VIEW - TABELA VIRTUAL COM O RESULTADO DE UM SELECT
+
+CREATE VIEW [VW_LIVROS_AUTORES]
+AS
+SELECT 
+Titulo_Livro,
+Nome_Autor
+FROM PDI..TBL_LIVROS AS L
+JOIN PDI..TBL_AUTORES AS A ON (L.ID_Autor = A.ID_Autor)
+
+SELECT * FROM VW_LIVROS_AUTORES
+SELECT * FROM VW_LIVROS_AUTORES WHERE Nome_Autor LIKE '%F%'
+--------------------------------------------------------------
+ALTER VIEW [VW_LIVROS_AUTORES]
+AS
+SELECT 
+Titulo_Livro,
+Nome_Autor,
+Preco_Livro
+FROM PDI..TBL_LIVROS AS L
+JOIN PDI..TBL_AUTORES AS A ON (L.ID_Autor = A.ID_Autor)
+
+SELECT * FROM VW_LIVROS_AUTORES
+SELECT * FROM VW_LIVROS_AUTORES WHERE Nome_Autor LIKE '%F%'
+---------------------------------------------------------------
+DROP VIEW VW_LIVROS_AUTORES
+SELECT * FROM VW_LIVROS_AUTORES
